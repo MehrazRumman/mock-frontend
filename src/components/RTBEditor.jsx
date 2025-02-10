@@ -166,7 +166,165 @@ const templates = [
         "language": "en"
       }
     }
+  } ,
+  {
+    name: 'Banner (Transsion)',
+    data: {
+      id: "240",
+      test: 1,
+      imp: [{
+        id: "1",
+        banner: {
+          format: [{ w: 480, h: 320 }, { w: 1024, h: 728 }],
+          w: 480,
+          h: 320
+        },
+        displaymanagerver: "1.4.2.6",
+        instl: 0,
+        tagid: "220518anmvgUwr",
+        bidfloor: 0.1,
+        bidfloorcur: "USD"
+      }],
+      app: {
+        id: "fda34eee7c094636ae70516b3047e970",
+        name: "",
+        ver: "5.3.6.00002",
+        bundle: "com.transsion.phonemaster",
+        storeurl: "https://play.google.com/store/apps/details?id=com.transsion.phonemaster"
+      },
+      device: {
+        ua: "Mozilla/5.0 (Linux; Android 8.0.0; ar-eg; Infinix X573B Build/OPR1.170623.032;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36",
+        ip: "102.185.132.201",
+        geo: { country: "IN", region: "", city: "", type: 2 },
+        carrier: "",
+        language: "ar",
+        make: "Infinix",
+        model: "Infinix X573B",
+        os: "ANDROID",
+        osv: "8.0.0",
+        w: 720,
+        h: 1440,
+        ppi: 2,
+        connectiontype: 5,
+        devicetype: 1,
+        ifa: "78d98c24-8a33-4b51-a92f-165c2326332e",
+        mccmnc: "01602"
+      },
+      user: { geo: { lat: 0, lon: 0 } },
+      at: 2,
+      tmax: 650,
+      bapp: ["com.pjpj.cleanmaster"],
+      source: { ext: { schain: { ver: "1.0", complete: 0, nodes: [{ sid: "7e9d3934e4c45b0c71ef9d6218460157d4778512", hp: 1 }] } } }
+    }
+  },
+  {
+    name: 'Interstitial (Transsion)',
+    data: {
+      "id": "240",
+      "test": 1,
+      "imp": [{
+        "id": "1",
+        "banner": {
+          "format": [{ "w": 300, "h": 250 }, { "w": 300, "h": 300 }],
+          "w": 300,
+          "h": 250
+        },
+        "displaymanagerver": "1.4.2.6",
+        "instl": 1,
+        "tagid": "220518anmvgUwr",
+        "bidfloor": 0.1,
+        "bidfloorcur": "USD"
+      }],
+      "app": {
+        "id": "fda34eee7c094636ae70516b3047e970",
+        "name": "",
+        "ver": "5.3.6.00002",
+        "bundle": "com.transsion.phonemaster",
+        "storeurl": "https://play.google.com/store/apps/details?id=com.transsion.phonemaster"
+      },
+      "device": {
+        "ua": "Mozilla/5.0 (Linux; Android 8.0.0; ar-eg; Infinix X573B Build/OPR1.170623.032;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36",
+        "ip": "102.185.132.201",
+        "geo": {
+          "country": "IN",
+          "region": "",
+          "city": "",
+          "type": 2
+        },
+        "carrier": "",
+        "language": "ar",
+        "make": "Infinix",
+        "model": "Infinix X573B",
+        "os": "ANDROID",
+        "osv": "8.0.0",
+        "w": 720,
+        "h": 1440,
+        "ppi": 2,
+        "connectiontype": 5,
+        "devicetype": 1,
+        "ifa": "78d98c24-8a33-4b51-a92f-165c2326332e",
+        "mccmnc": "01602"
+      },
+      "user": {
+        "geo": { "lat": 0, "lon": 0 }
+      },
+      "at": 2,
+      "tmax": 650,
+      "bapp": ["com.pjpj.cleanmaster"],
+      "source": {
+        "ext": {
+          "schain": {
+            "ver": "1.0",
+            "complete": 0,
+            "nodes": [{
+              "sid": "7e9d3934e4c45b0c71ef9d6218460157d4778512",
+              "hp": 1
+            }]
+          }
+        }
+      }
+    }
+  },
+  {
+    name: 'Native (Transsion)',
+    data: {
+      "app": {
+        "ver": "8.5.22",
+        "storeurl": "https://play.google.com/store/apps/details?id=com.transsion.XOSLauncher",
+        "name": "",
+        "id": "cdfe964c4ac84812b03d67209d27d50b",
+        "bundle": "com.transsion.XOSLauncher"
+      },
+      "at": 2,
+      "tmax": 17950,
+      "source": {
+        "ext": {
+          "schain": {
+            "ver": "1.0",
+            "nodes": [{
+              "hp": 1,
+              "sid": "7e9d3934e4c45b0c71ef9d6218460157d4778512"
+            }],
+            "complete": 0
+          }
+        }
+      },
+      "id": "7789bf00-7a21-4e40-b566-2e2f55b0aa49",
+      "imp": [{
+        "native": {
+          "request": "{\"native\":{\"ver\":\"1.2\",\"assets\":[{\"id\":101,\"required\":0,\"title\":{\"len\":150}},{\"id\":102,\"required\":0,\"data\":{\"type\":2,\"len\":150}},{\"id\":103,\"required\":0,\"data\":{\"type\":12,\"len\":80}},{\"id\":104,\"required\":0,\"img\":{\"type\":1,\"wmin\":50,\"hmin\":50}},{\"id\":105,\"required\":1,\"img\":{\"type\":3,\"wmin\":200,\"hmin\":200}}]}}",
+          "ver": "1.2"
+        },
+        "tagid": "88c2b82c804b4d0f87b1463f0363827d",
+        "displaymanagerver": "1.2.1.12",
+        "bidfloor": 0.2,
+        "bidfloorcur": "USD",
+        "id": "1",
+        "instl": 0
+      }]
+    }
   }
+
 ];
 
 const RTBEditor = () => {
