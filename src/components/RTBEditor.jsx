@@ -288,44 +288,79 @@ const templates = [
     }
   },
   {
-    name: 'Native (Transsion)',
-    data: {
-      "app": {
-        "ver": "8.5.22",
-        "storeurl": "https://play.google.com/store/apps/details?id=com.transsion.XOSLauncher",
-        "name": "",
-        "id": "cdfe964c4ac84812b03d67209d27d50b",
-        "bundle": "com.transsion.XOSLauncher"
-      },
-      "at": 2,
-      "tmax": 17950,
-      "source": {
-        "ext": {
-          "schain": {
-            "ver": "1.0",
-            "nodes": [{
-              "hp": 1,
-              "sid": "7e9d3934e4c45b0c71ef9d6218460157d4778512"
-            }],
-            "complete": 0
-          }
-        }
-      },
-      "id": "7789bf00-7a21-4e40-b566-2e2f55b0aa49",
-      "imp": [{
-        "native": {
-          "request": "{\"native\":{\"ver\":\"1.2\",\"assets\":[{\"id\":101,\"required\":0,\"title\":{\"len\":150}},{\"id\":102,\"required\":0,\"data\":{\"type\":2,\"len\":150}},{\"id\":103,\"required\":0,\"data\":{\"type\":12,\"len\":80}},{\"id\":104,\"required\":0,\"img\":{\"type\":1,\"wmin\":50,\"hmin\":50}},{\"id\":105,\"required\":1,\"img\":{\"type\":3,\"wmin\":200,\"hmin\":200}}]}}",
-          "ver": "1.2"
+    "name": "Native (Transsion)",
+    "data": {
+        "app": {
+            "ver": "8.5.22",
+            "storeurl": "https://play.google.com/store/apps/details?id=com.transsion.XOSLauncher",
+            "name": "",
+            "id": "cdfe964c4ac84812b03d67209d27d50b",
+            "bundle": "com.transsion.XOSLauncher"
         },
-        "tagid": "88c2b82c804b4d0f87b1463f0363827d",
-        "displaymanagerver": "1.2.1.12",
-        "bidfloor": 0.2,
-        "bidfloorcur": "USD",
-        "id": "1",
-        "instl": 0
-      }]
+        "at": 2,
+        "tmax": 17950,
+        "source": {
+            "ext": {
+                "schain": {
+                    "ver": "1.0",
+                    "nodes": [{
+                        "hp": 1,
+                        "sid": "7e9d3934e4c45b0c71ef9d6218460157d4778512"
+                    }],
+                    "complete": 0
+                }
+            }
+        },
+        "id": "7789bf00-7a21-4e40-b566-2e2f55b0aa49",
+        "imp": [{
+            "native": {
+                "request": "{\"native\":{\"ver\":\"1.2\",\"assets\":[{\"id\":101,\"required\":0,\"title\":{\"len\":150}},{\"id\":102,\"required\":0,\"data\":{\"type\":2,\"len\":150}},{\"id\":103,\"required\":0,\"data\":{\"type\":12,\"len\":80}},{\"id\":104,\"required\":0,\"img\":{\"type\":1,\"wmin\":50,\"hmin\":50}},{\"id\":105,\"required\":1,\"img\":{\"type\":3,\"wmin\":200,\"hmin\":200}}]}}",
+                "ver": "1.2"
+            },
+            "tagid": "88c2b82c804b4d0f87b1463f0363827d",
+            "displaymanagerver": "1.2.1.12",
+            "bidfloor": 0.2,
+            "bidfloorcur": "USD",
+            "id": "1",
+            "instl": 0
+        }],
+        "device": {
+            "macsha1": "6e83288ba088225754a005d41c71d33718531af8",
+            "didmd5": "",
+            "os": "ANDROID",
+            "ifa": "ffe1c2c0-4d39-49bb-a2d0-e4111af0bc90",
+            "ip": "182.2.104.93",
+            "ppi": 2,
+            "h": 1600,
+            "language": "in",
+            "macmd5": "37f3c855eb5d743c511ab98bebb83554",
+            "ua": "Mozilla/5.0 (Linux; Android 9; in-id; Infinix X650C Build/PPR1.180610.011;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36",
+            "devicetype": 1,
+            "geo": {
+                "country": "ID",
+                "city": "Mogoi",
+                "region": "IDN",
+                "type": 2
+            },
+            "carrier": "",
+            "osv": "9",
+            "dpidmd5": "115a9cc9760859111330941e6b591f92",
+            "mccmnc": "10510",
+            "w": 720,
+            "didsha1": "",
+            "model": "Infinix X650C",
+            "connectiontype": 6,
+            "make": "Infinix",
+            "dpidsha1": "d4f0991910a9932d5d1640ea375eeb3fe5776265"
+        },
+        "user": {
+            "geo": {
+                "lon": 109.77487666666666,
+                "lat": 1.395295
+            }
+        }
     }
-  }
+}
 
 ];
 
