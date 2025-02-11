@@ -13,9 +13,11 @@ import {
   Grid,
   Box,
   Alert,
-  TextField
+  TextField,
+  IconButton
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 const StyledTextarea = styled(TextareaAutosize)(({ theme }) => ({
   width: '100%',
@@ -401,6 +403,15 @@ const RTBEditor = () => {
     }
   };
 
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Copied to clipboard');
+    }).catch(err => {
+      alert('Failed to copy: ', err);
+    });
+  };
+
   return (
     <Container maxWidth="xl" sx={{ py: 4 }}>
       <Typography variant="h4" component="h1" gutterBottom>
@@ -472,7 +483,13 @@ const RTBEditor = () => {
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <Card>
-            <CardHeader title="Request Template" />
+            <CardHeader title="Request Template" 
+            action={
+              <IconButton onClick={() => copyToClipboard(requestBody)}>
+                <ContentCopyIcon />
+              </IconButton>
+            }
+            />
             <CardContent>
               <StyledTextarea
                 value={requestBody}
@@ -489,7 +506,13 @@ const RTBEditor = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Card>
-            <CardHeader title="Response Body" />
+            <CardHeader title="Response Body" 
+            action={
+              <IconButton onClick={() => copyToClipboard(responseBody)}>
+                <ContentCopyIcon />
+              </IconButton>
+            }
+            />
             <CardContent>
               <StyledTextarea
                 value={responseBody}
