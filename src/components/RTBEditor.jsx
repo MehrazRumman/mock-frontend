@@ -18,6 +18,7 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import Snackbar from '@mui/material/Snackbar';
 
 const StyledTextarea = styled(TextareaAutosize)(({ theme }) => ({
   width: '100%',
@@ -374,6 +375,9 @@ const RTBEditor = () => {
   const [responses, setResponses] = useState([]);
   const [endpoint, setEndpoint] = useState('http://localhost:8080/bid');
 
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+
   const generateRandomRequest = () => {
     const templateIndex = Math.floor(Math.random() * templates.length);
     const template = templates[templateIndex];
@@ -440,13 +444,16 @@ const RTBEditor = () => {
 
 
   const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text).then(() => {
-      alert('Copied to clipboard');
-    }).catch(err => {
-      alert('Failed to copy: ', err);
-    });
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        setSnackbarMessage('Copied to clipboard!');
+        setSnackbarOpen(true);
+      })
+      .catch(err => {
+        setSnackbarMessage('Failed to copy: ' + err.message);
+        setSnackbarOpen(true);
+      });
   };
-
   return (
     <Container maxWidth="xl" sx={{ py: 4 }}>
       <Typography variant="h4" component="h1" gutterBottom>
@@ -543,9 +550,18 @@ const RTBEditor = () => {
           <Card>
             <CardHeader title="Response Body" 
             action={
-              <IconButton onClick={() => copyToClipboard(responseBody)}>
+              <>
+              <IconButton onClick={() => copyToClipboard(responseBody)} color="primary">
                 <ContentCopyIcon />
               </IconButton>
+          
+              <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={3000}
+                onClose={() => setSnackbarOpen(false)}
+                message={snackbarMessage}
+              />
+            </>
             }
             />
             <CardContent>
