@@ -1,4 +1,4 @@
-// src/pages/api/bid.js
+
 
 export default function handler(req, res) {
     if (req.method !== 'POST') {
@@ -6,19 +6,19 @@ export default function handler(req, res) {
     }
   
     try {
-      // Extract the bid request from the 'data' field
+      
       const bidRequest = req.body.data;
       if (!bidRequest || !bidRequest.id || !bidRequest.imp) {
         return res.status(400).json({ error: 'Invalid bid request' });
       }
   
-      // Generate a bid response
+    
       const bidResponse = generateBidResponse(bidRequest);
   
       if (bidResponse) {
         res.status(200).json(bidResponse);
       } else {
-        res.status(204).end(); // No bid
+        res.status(204).end(); 
       }
     } catch (error) {
       console.error('Error processing bid request:', error);
@@ -27,10 +27,10 @@ export default function handler(req, res) {
   }
   
   function generateBidResponse(bidRequest) {
-    // Process each impression (though your example has only one)
+    
     const seatbid = bidRequest.imp.map((imp) => {
-      // Check if this is a banner impression we want to bid on
-      if (!imp.banner || imp.bidfloor > 0.5) { // Example: Don't bid if floor > $0.50
+     
+      if (!imp.banner || imp.bidfloor > 0.5) { 
         return null;
       }
   
@@ -41,40 +41,40 @@ export default function handler(req, res) {
   
       return {
         bid: [{
-          id: `bid-${Date.now()}-${imp.id}`, // Unique bid ID
-          impid: imp.id, // Match the impression ID
-          price: bidPrice, // Bid price
-          adm: generateAdMarkup(imp), // Ad markup
-          nurl: 'http://yourserver.com/winnotice', // Win notification URL
-          crid: 'creative-123', // Creative ID (optional)
-          w: imp.banner.w, // Width from the impression
-          h: imp.banner.h // Height from the impression
+          id: `bid-${Date.now()}-${imp.id}`, 
+          impid: imp.id, 
+          price: bidPrice, 
+          adm: generateAdMarkup(imp), 
+          nurl: 'http://yourserver.com/winnotice', 
+          crid: 'creative-123',
+          w: imp.banner.w,
+          h: imp.banner.h 
         }]
       };
-    }).filter(Boolean); // Remove null entries (no bids)
+    }).filter(Boolean); 
   
-    // If we have bids, construct the response
+    
     if (seatbid.length > 0) {
       return {
-        id: bidRequest.id, // Echo the request ID
+        id: bidRequest.id,
         seatbid: seatbid,
-        bidid: `bid-resp-${Date.now()}`, // Unique response ID
-        cur: bidRequest.imp[0].bidfloorcur || 'USD' // Currency from bidfloorcur
+        bidid: `bid-resp-${Date.now()}`, 
+        cur: bidRequest.imp[0].bidfloorcur || 'USD'
       };
     }
   
-    return null; // No bids
+    return null;
   }
   
   function calculateBidPrice(imp) {
-    // Simple bidding logic: bid slightly above the floor price
+   
     const bidFloor = imp.bidfloor || 0;
-    const bidPrice = bidFloor + 0.01; // Bid $0.01 above floor
-    return Number(bidPrice.toFixed(2)); // Round to 2 decimal places
+    const bidPrice = bidFloor + 0.01; 
+    return Number(bidPrice.toFixed(2)); 
   }
   
   function generateAdMarkup(imp) {
-    // Generate HTML ad markup based on the banner dimensions
+
     const { w, h } = imp.banner;
     return `
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
