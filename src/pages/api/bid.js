@@ -74,7 +74,7 @@ export default function handler(req, res) {
   }
   
   function generateAdMarkup(imp) {
-    const { w, h } = imp.banner;
+     const { w, h } = imp.banner;
     return `
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <script type="text/javascript">
@@ -619,6 +619,7 @@ export default function handler(req, res) {
       <img src="https://content.adfinix.com/adfinix-static/20x20px.png" alt="Adfinix logo" />
       <span>Adfinix</span>
     </a>
+    <p>${w}x${h} Banner</p>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
